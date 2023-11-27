@@ -22,7 +22,18 @@ public class RaycastManager : Singleton<RaycastManager>
         if (Physics.Raycast(ray, out hit, hitAmount))
         {
             carMovementController = hit.collider.GetComponent<CarMovementController>();
-            Debug.Log(hit.collider.name);
+            if (carMovementController != null)
+            {
+                ChangeToCarMovementController(true);
+            }
+        }
+        else
+        {
+            if (carMovementController != null)
+            {
+                ChangeToCarMovementController(false);
+            }
         }
     }
+    private void ChangeToCarMovementController(bool isMove) => carMovementController.isMoving = isMove;
 }

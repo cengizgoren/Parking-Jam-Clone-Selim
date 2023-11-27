@@ -7,12 +7,20 @@ public class CarMovementController : MonoBehaviour
     [SerializeField] private float rotateTime = 0.65f;
     public Direction direction;
     [HideInInspector]
-    public bool isMoving = true;
+    public bool isMoving = false;
     [SerializeField] private Transform[] target;
     [SerializeField] private Ease ease;
 
     public Vector3 startPos;
     private const string strUntagged = "Untagged";
+
+    Tween tween;
+
+    private void Start()
+    {
+        startPos = transform.position;
+        Debug.Log("isMoving" + isMoving);
+    }
     private void Update()
     {
         if (RaycastManager.Instance.carMovementController != this)
@@ -54,18 +62,16 @@ public class CarMovementController : MonoBehaviour
     }
     public void CarMoving(Vector3 target)
     {
+        Debug.Log("IsMoving" + isMoving);
+        Debug.Log("1");
         if (isMoving)
         {
-            transform.DOMove(target, 1f);
+            tween = transform.DOMove(target, 1f);
         }   
     }
     public void ChangeDirectionToCar(Direction changeDirection)
     {
         direction = changeDirection;
-    }
-    public void CarMovingToStartPos()
-    {
-        transform.DOMove(startPos,.2f).SetEase(Ease.InBounce);
     }
     public void NodeTriggering(Collider other)
     {

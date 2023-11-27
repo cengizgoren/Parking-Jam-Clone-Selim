@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager : Singleton<InputManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 _lastFrameFingerPositionX;
+    private Vector3 _moveFactorX;
+
+    public Vector3 MoveFactorX { get => _moveFactorX; }
+
+    private void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            _lastFrameFingerPositionX = Input.mousePosition;
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            _moveFactorX = Input.mousePosition - _lastFrameFingerPositionX;
+            _lastFrameFingerPositionX = Input.mousePosition;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            _moveFactorX = Vector3.zero;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

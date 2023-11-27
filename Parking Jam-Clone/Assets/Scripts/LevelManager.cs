@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class LevelManager : Singleton<LevelManager>
     [Header("Levels")]
     [SerializeField] private Level[] levels;
     [SerializeField] private Level testLevel;
+    [SerializeField] private TextMeshProUGUI tmPro;
     public int levelIndex;
 
     private void Awake()
@@ -16,6 +18,7 @@ public class LevelManager : Singleton<LevelManager>
     private void LevelInit()
     {
         Level levelObject = testLevel != null ? SpawnLevel(testLevel) : SpawnLevel(levels[levelIndex]);
+        tmPro.text = "Level" + " " + levelIndex.ToString();
     }
     private void SetLevelIndex()
     {

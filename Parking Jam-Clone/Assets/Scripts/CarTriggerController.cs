@@ -6,7 +6,7 @@ public class CarTriggerController : MonoBehaviour
     private const string strNode = "Node";
     private const string strUntagged = "Untagged";
     private const string strCar = "Car";
-    private float time = 2f;
+    private const string finishStr = "Finish";
     private CarMovementController carMovementController;
 
     private void Awake()

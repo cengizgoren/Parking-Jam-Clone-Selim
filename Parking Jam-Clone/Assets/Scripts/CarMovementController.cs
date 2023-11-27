@@ -62,8 +62,6 @@ public class CarMovementController : MonoBehaviour
     }
     public void CarMoving(Vector3 target)
     {
-        Debug.Log("IsMoving" + isMoving);
-        Debug.Log("1");
         if (isMoving)
         {
             tween = transform.DOMove(target, 1f);

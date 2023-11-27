@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8944138892640203583}
   m_Layer: 0
   m_Name: Car1
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,13 +112,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTime: 0.8
-  rotateTime: 1
+  rotateTime: 0.65
   direction: 0
   isMoving: 1
   target:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ease: 0
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!65 &7074627210608856721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138,8 +141,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.19340295, y: 0.14161374, z: 0.12589481}
-  m_Center: {x: -0.010759836, y: -0.00020583665, z: 0.06007921}
+  m_Size: {x: 0.16579926, y: 0.101326816, z: 0.10670114}
+  m_Center: {x: -0.01008898, y: 0.003236793, z: 0.0504837}
 --- !u!54 &8944138892640203583
 Rigidbody:
   m_ObjectHideFlags: 0

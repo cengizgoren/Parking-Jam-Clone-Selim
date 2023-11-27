@@ -3,11 +3,16 @@ using UnityEngine;
 public enum Direction { None,Right , Left , Down ,Up }
 public class CarMovementController : MonoBehaviour
 {
-    [SerializeField] private float time = 1.3f;
+    [SerializeField] private float moveTime = .65f;
+    [SerializeField] private float rotateTime = 0.65f;
     public Direction direction;
     [HideInInspector]
     public bool isMoving = true;
     [SerializeField] private Transform[] target;
+    [SerializeField] private Ease ease;
+
+    public Vector3 startPos;
+    private const string strUntagged = "Untagged";
     private void Update()
     {
         if (RaycastManager.Instance.carMovementController != this)
@@ -51,11 +56,29 @@ public class CarMovementController : MonoBehaviour
     {
         if (isMoving)
         {
-            transform.DOMove(target, time);
+            transform.DOMove(target, 1f);
         }   
     }
     public void ChangeDirectionToCar(Direction changeDirection)
     {
         direction = changeDirection;
+    }
+    public void CarMovingToStartPos()
+    {
+        transform.DOMove(startPos,.2f).SetEase(Ease.InBounce);
+    }
+    public void NodeTriggering(Collider other)
+    {
+        // other.tag = strUntagged;
+        int nodeIndex = NodeManager.Instance.Nodes.IndexOf(other.transform);
+        // NodeManager.Instance.Nodes.Contains(NodeManager.Instance.Nodes[nodeIndex + 1]
+        if (NodeManager.Instance.Nodes.Count > nodeIndex + 1)
+        {
+            transform.DOMove(NodeManager.Instance.Nodes[nodeIndex + 1].position, moveTime).OnUpdate(() => transform.DORotate(NodeManager.Instance.Nodes[nodeIndex + 1].eulerAngles, rotateTime)).SetEase(ease);
+        }
+        else
+        {
+            isMoving = false;
+        }
     }
 }

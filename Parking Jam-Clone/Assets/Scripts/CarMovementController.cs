@@ -14,14 +14,27 @@ public class CarMovementController : MonoBehaviour
     public Vector3 startPos;
     private const string strUntagged = "Untagged";
 
-    Tween tween;
+    public bool isStartPos = false;
+    public Rigidbody rb;
 
     private void Start()
     {
         startPos = transform.position;
         Debug.Log("isMoving" + isMoving);
     }
+    private void CarMovingToStartPos()
+    {
+        if (isStartPos)
+        {
+            transform.position = Vector3.Lerp(transform.position, startPos, 3 * Time.deltaTime);
+        }
+    }
     private void Update()
+    {
+        CarInputMoving();
+        CarMovingToStartPos();
+    }
+    private void CarInputMoving()
     {
         if (RaycastManager.Instance.carMovementController != this)
         {
@@ -64,7 +77,7 @@ public class CarMovementController : MonoBehaviour
     {
         if (isMoving)
         {
-            tween = transform.DOMove(target, 1f);
+            transform.DOMove(target, 1f);
         }   
     }
     public void ChangeDirectionToCar(Direction changeDirection)

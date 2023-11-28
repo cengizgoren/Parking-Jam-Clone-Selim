@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class CarTriggerController : MonoBehaviour
 {
@@ -19,5 +20,25 @@ public class CarTriggerController : MonoBehaviour
         {
             carMovementController.NodeTriggering(other);
         }
+        else if (other.CompareTag(strCar))
+        {
+            StartCoroutine(CarTrigggerCoroutine());
+        }
+        else if (other.CompareTag(finishStr))
+        {
+            CarChangeToUntag();
+        }
+    }
+    private void CarChangeToUntag()
+    {
+        gameObject.SetActive(false);
+        Debug.Log(gameObject.name + "isFinished");
+    }
+    private IEnumerator CarTrigggerCoroutine()
+    {
+        carMovementController.isStartPos = true;
+        DOTween.KillAll();
+        yield return new WaitForSeconds(.4f);
+        carMovementController.isStartPos = false;
     }
 }

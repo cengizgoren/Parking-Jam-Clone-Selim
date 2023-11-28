@@ -987,6 +987,8 @@ MonoBehaviour:
   - {fileID: 0}
   ease: 0
   startPos: {x: 0, y: 0, z: 0}
+  isStartPos: 0
+  rb: {fileID: 0}
 --- !u!114 &1872854784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,6 +1074,8 @@ MonoBehaviour:
   - {fileID: 0}
   ease: 0
   startPos: {x: 0, y: 0, z: 0}
+  isStartPos: 0
+  rb: {fileID: 0}
 --- !u!23 &178345725251887877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1827,6 +1831,8 @@ MonoBehaviour:
   - {fileID: 0}
   ease: 0
   startPos: {x: 0, y: 0, z: 0}
+  isStartPos: 0
+  rb: {fileID: 0}
 --- !u!33 &2630748067849642826
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3220,6 +3226,8 @@ MonoBehaviour:
   - {fileID: 4214969212171246734}
   ease: 0
   startPos: {x: 0, y: 0, z: 0}
+  isStartPos: 0
+  rb: {fileID: 0}
 --- !u!33 &6424141008480531702
 MeshFilter:
   m_ObjectHideFlags: 0

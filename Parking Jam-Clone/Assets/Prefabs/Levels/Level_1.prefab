@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTime: 0.5
-  rotateTime: 0.6
+  rotateTime: 0.5
   direction: 0
   isMoving: 1
   target:
@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTime: 0.5
-  rotateTime: 0.6
+  rotateTime: 0.5
   direction: 0
   isMoving: 1
   target:
@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTime: 0.5
-  rotateTime: 0.6
+  rotateTime: 0.5
   direction: 0
   isMoving: 1
   target:

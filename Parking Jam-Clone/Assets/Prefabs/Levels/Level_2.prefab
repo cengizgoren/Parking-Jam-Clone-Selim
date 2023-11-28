@@ -2393,6 +2393,10 @@ PrefabInstance:
       value: Car2
       objectReference: {fileID: 0}
     - target: {fileID: 5638186212567256653, guid: cc05316807392fe44ac07210ea6598d3, type: 3}
+      propertyPath: rotateTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638186212567256653, guid: cc05316807392fe44ac07210ea6598d3, type: 3}
       propertyPath: target.Array.data[3]
       value: 
       objectReference: {fileID: 2514421117502058409}
@@ -2420,7 +2424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2754147596545651239, guid: 6dc6f7c93b187ce459d4bfda47cdb78b, type: 3}
       propertyPath: rotateTime
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2754147596545651239, guid: 6dc6f7c93b187ce459d4bfda47cdb78b, type: 3}
       propertyPath: target.Array.data[0]
@@ -3053,7 +3057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327220967449315252, guid: 2fdf9bcddd617ed49a408ecdff71b6ae, type: 3}
       propertyPath: rotateTime
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8327220967449315252, guid: 2fdf9bcddd617ed49a408ecdff71b6ae, type: 3}
       propertyPath: target.Array.data[3]
@@ -3152,7 +3156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327220967449315252, guid: 2fdf9bcddd617ed49a408ecdff71b6ae, type: 3}
       propertyPath: rotateTime
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8327220967449315252, guid: 2fdf9bcddd617ed49a408ecdff71b6ae, type: 3}
       propertyPath: target.Array.data[0]
